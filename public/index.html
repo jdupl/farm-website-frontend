@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ma ferme</title>
+
+    <link href="/bower_components/bootswatch-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/main.css" rel="stylesheet">
+    <link href="/favicon.ico" rel="icon">
+
+    <base href="/">
+  </head>
+  <body ng-app="app">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Ma ferme</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar" ng-controller="NavbarController">
+              <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/') }"><a href="/"><i class="fa fa-home"></i> Accueil</a></li>
+                <li ng-class="{ active: isActive('/apropos') }"><a href="/apropos"><i class="fa fa-question-circle"></i> À propos</a></li>
+                <li ng-class="{ active: isActive('/produits') }" class="hidden-sm"><a href="/produits"><i class="fa fa-cutlery"></i> Nos produits</a></li>
+                <li ng-class="{ active: isActive('/autocueillette') }" class="hidden-sm"><a href="/autocueillette"><i class="fa fa-hand-rock-o"></i> Autocueillette</a></li>
+                <li ng-class="{ active: isActive('/contact') }"><a href="/contact"><i class="fa fa fa-envelope"></i> Nous contacter</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="container body">
+        <div class="row">
+          <div class="col-lg-9">
+            <ng-view  $autoscroll="true"></ng-view>
+          </div>
+          <div class="col-lg-3">
+            <h3>Restez connecté !</h3>
+            <div class="fb-follow" data-href="https://www.facebook.com/zuck" data-layout="standard" data-size="large" data-show-faces="true"></div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <p class="pull-left text-muted">&copy; Ma ferme 2017</p>
+          <ul class="list-inline text-center">
+            <li><a href="/apropos"><i class="fa fa-question-circle"></i> À propos</a></li>
+            <li><a href="/produits"><i class="fa fa-cutlery"></i> Produits</a></li>
+            <li><a href="/autocueillette"><i class="fa fa-hand-rock-o"></i> Autocueillette</a></li>
+            <li><a href="/contact"><i class="fa fa-envelope"></i> Nous contacter</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/bower_components/jquery/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
