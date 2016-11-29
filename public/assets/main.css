@@ -102,7 +102,8 @@ footer a {
   font-size: 10px;
   line-height: 1.4;
   text-align: center;
-  background-color: #f9f9f9;
+  color: #fff;
+  background-color: #563d7c;
   border: 1px solid #fff;
 }
 .bs-glyphicons .glyphicon {
@@ -117,7 +118,7 @@ footer a {
 }
 .bs-glyphicons li:hover {
   color: #fff;
-  background-color: #563d7c;
+  background-color: #18bc9c;
 }
 
 @media (min-width: 768px) {
@@ -127,6 +128,6 @@ footer a {
   }
   .bs-glyphicons li {
     width: 12.5%;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
